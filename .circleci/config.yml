@@ -20,7 +20,9 @@ jobs:
                 --region us-east-1
 # Sequential workflow
 workflows:
-  # Name the workflow
-  myWorkflow:
+  # Name the workflow "welcome"
+  my_workflow:
+    # Run the welcome/run job in its own container
     jobs:
-      -create_infrastructure
+      # - welcome/run
+      - create_infrastructure
