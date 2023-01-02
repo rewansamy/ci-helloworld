@@ -51,7 +51,6 @@ jobs:
           name: Configure server
           command: |
             ansible-playbook -i inventory.txt main4.yml
-      -  destroy_environment  
   # Exercise: Smoke Testing
   smoke_test:
     docker:
