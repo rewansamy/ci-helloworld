@@ -32,7 +32,6 @@ jobs:
                 --template-file template.yml \
                 --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
                 --region us-east-1
-        - run: return 1
         - destroy_environment 
     # Exercise: Config and Deployment
   configure_infrastructure: 
@@ -59,15 +58,16 @@ jobs:
       - run: apk add --update curl
       - run:
           name: smoke test
-          command: |
-            URL="https://blog.udacity.com/"
-            # Test if website exists
-            if curl -s --head ${URL} 
-            then
-              return 0
-            else
-              return 1
-            fi
+#          command: |
+ #           URL="https://blog.udacity.com/"
+  #          # Test if website exists
+  #          if curl -s --head ${URL} 
+   #         then
+    #          return 0
+     #       else
+      #        return 1
+       #     fi
+          command:  return 1
       - destroy_environment 
       
 
