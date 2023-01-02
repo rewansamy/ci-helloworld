@@ -5,7 +5,7 @@ orbs:
   # welcome: circleci/welcome-orb@0.4.1
   aws-cli: circleci/aws-cli@2.0.3
   
-command:
+commands:
   # Exercise - Rollback
   destroy_environment:
     steps:
@@ -58,17 +58,8 @@ jobs:
       - run: apk add --update curl
       - run:
           name: smoke test
-#          command: |
- #           URL="https://blog.udacity.com/"
-  #          # Test if website exists
-  #          if curl -s --head ${URL} 
-   #         then
-    #          return 0
-     #       else
-      #        return 1
-       #     fi
           command:  return 1
-      - destroy_environment 
+      -  destroy_environment 
       
 
 # Sequential workflow
